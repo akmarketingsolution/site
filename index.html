@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>A&K Marketing Solution</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         * {
             margin: 0;
@@ -17,7 +18,9 @@
             color: #333;
         }
 
+        /* HERO SECTION */
         header {
+            position: relative;
             background: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085") center/cover no-repeat;
             height: 90vh;
             color: white;
@@ -28,28 +31,50 @@
             padding: 20px;
         }
 
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        header .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
         header h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.8);
         }
 
         header p {
-            font-size: 1.3rem;
-            max-width: 700px;
-            margin: auto;
+            font-size: 1.4rem;
+            text-shadow: 0 3px 8px rgba(0,0,0,0.8);
         }
 
+        /* SECTIONS */
         section {
             padding: 60px 20px;
             max-width: 1100px;
             margin: auto;
         }
 
+        section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* SERVICES */
         .services {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
-            margin-top: 40px;
         }
 
         .service-box {
@@ -60,13 +85,20 @@
         }
 
         .service-box h3 {
-            margin-bottom: 10px;
-            color: #222;
+            margin-bottom: 15px;
         }
 
+        /* CONTACT */
         .contact {
             background: #222;
             color: white;
+            max-width: 100%;
+        }
+
+        .contact-inner {
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 20px;
         }
 
         .contact-info {
@@ -102,6 +134,7 @@
             background: #e68900;
         }
 
+        /* FOOTER */
         footer {
             text-align: center;
             padding: 20px;
@@ -109,49 +142,62 @@
             color: white;
             font-size: 0.9rem;
         }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header p {
+                font-size: 1.1rem;
+            }
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <div>
+    <div class="hero-content">
         <h1>A&K Marketing Solution</h1>
         <p>Helping brands grow through smart digital marketing, creative strategy, and measurable results.</p>
     </div>
 </header>
 
 <section>
-    <h2 style="text-align:center;">Our Services</h2>
+    <h2>Our Services</h2>
     <div class="services">
         <div class="service-box">
             <h3>Digital Marketing</h3>
-            <p>SEO, PPC, and data-driven campaigns designed to grow your online presence.</p>
+            <p>SEO, PPC, and data-driven marketing campaigns that deliver real growth.</p>
         </div>
         <div class="service-box">
             <h3>Brand Strategy</h3>
-            <p>We build strong brand identities that connect with your audience.</p>
+            <p>Strong branding and messaging that connects your business with the right audience.</p>
         </div>
         <div class="service-box">
             <h3>Social Media Management</h3>
-            <p>Engaging content and growth strategies across all major platforms.</p>
+            <p>Engaging content and consistent growth across all major social platforms.</p>
         </div>
     </div>
 </section>
 
 <section class="contact">
-    <div class="contact-info">
-        <h2>Contact Us</h2>
-        <p>Email: info@akmarketingsolution.com</p>
-        <p>Phone: 818-270-4465</p>
-    </div>
+    <div class="contact-inner">
+        <div class="contact-info">
+            <h2>Contact Us</h2>
+            <p>Email: info@akmarketingsolution.com</p>
+            <p>Phone: 818-270-4465</p>
+        </div>
 
-    <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <input type="tel" placeholder="Your Phone">
-        <textarea rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-    </form>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="tel" placeholder="Your Phone">
+            <textarea rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
 </section>
 
 <footer>
